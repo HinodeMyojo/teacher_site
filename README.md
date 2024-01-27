@@ -1,2 +1,2 @@
 # teacher_site
-it's pet project
+it's a pet project
