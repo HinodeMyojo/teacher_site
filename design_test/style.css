@@ -1,0 +1,36 @@
+.mainpage {
+  background: linear-gradient(180deg, rgb(174, 218, 255) 0%, rgb(224, 220, 213) 100%);
+  display: flex;
+}
+.mainpage a {
+  text-decoration: none;
+}
+
+/* header-start */
+header {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  max-width: 80%;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 24px;
+}
+
+.nav_main,
+.nav_plan {
+  display: flex;
+  flex-direction: row;
+  gap: 45px;
+}
+
+/* header-end */
+
+/*# sourceMappingURL=style.css.map */

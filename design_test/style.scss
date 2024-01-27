@@ -1,0 +1,45 @@
+.mainpage {
+  background: linear-gradient(180deg, rgba(174,218,255,1) 0%, rgba(224,220,213,1) 100%);
+  display: flex;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: row;
+}
+
+/* header-start */
+
+header{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+nav {
+  @include flex-row();
+  flex: 1;
+  max-width: 80%;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 24px
+}
+
+.nav_main,
+.nav_plan{
+  @include flex-row();
+  gap: 45px;
+}
+
+
+/* header-end */
