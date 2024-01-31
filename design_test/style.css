@@ -8,6 +8,13 @@ h2 {
   font-weight: normal;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  background-image: url("image/background.png");
+  background-size: cover;
+}
+
 .mainpage {
   display: flex;
   flex-direction: column;
@@ -37,7 +44,7 @@ header a, header h2 {
   color: #005F7E;
   align-items: center;
   font-weight: normal;
-  font-size: 24px;
+  font-size: 18px;
 }
 
 nav {
@@ -54,7 +61,7 @@ nav {
   display: flex;
   flex-direction: row;
   gap: 45px;
-  height: 100px;
+  height: 60px;
   align-items: center;
 }
 
@@ -66,14 +73,16 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 320px;
-  height: 55px;
+  width: 290px;
+  height: 40px;
   border-radius: 25px;
   border-style: none;
   background-color: #86FF84;
 }
 
 .nav_plan-button:active {
+  transition: 0.3s;
+  transform: scale(0.9);
   background-color: #5fff5d;
 }
 
@@ -87,16 +96,17 @@ nav {
   align-items: center;
 }
 .nav_main_ico img {
-  width: 150px;
+  width: 130px;
   height: auto;
 }
 
 .nav_main_ico_info {
   display: flex;
   flex-direction: column;
+  gap: 2px;
 }
 .nav_main_ico_info h2 {
-  font-size: 23px;
+  font-size: 22px;
   margin: 0;
   font-weight: bold;
 }
@@ -105,7 +115,7 @@ nav {
   display: flex;
   flex-direction: row;
   width: 160px;
-  height: 36px;
+  height: 30px;
   background-color: #FFC4A3;
   align-items: center;
   justify-content: center;
@@ -115,7 +125,7 @@ nav {
 }
 .nav_main_ico_info_label p {
   font-weight: 500;
-  font-size: 12px;
+  font-size: 11px;
 }
 .nav_main_ico_info_label img {
   margin-right: -7px;
@@ -162,30 +172,32 @@ main {
   gap: 10px;
 }
 .main_page_info h2 {
-  font-size: 48px;
+  font-size: 38px;
   margin: 0;
   font-weight: 1000;
 }
 .main_page_info p {
-  font-size: 25px;
+  font-size: 22px;
   color: #4A4A4A;
 }
 .main_page_info button {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 320px;
-  height: 70px;
+  width: 300px;
+  height: 60px;
   border-radius: 25px;
   border-style: none;
   background-color: #5cdb5a;
 }
 .main_page_info button h2 {
-  font-size: 25px;
+  font-size: 21px;
   margin: 0;
   font-weight: normal;
 }
 .main_page_info button:active {
+  transition: 0.3s;
+  transform: scale(0.9);
   background-color: #32d62f;
 }
 
@@ -196,8 +208,6 @@ main {
 .main_page_photo_photo {
   display: flex;
   flex-direction: column;
-  width: 480px;
-  height: 730px;
   align-items: center;
   justify-content: center;
 }
