@@ -2,6 +2,9 @@ html {
   display: flex;
   min-height: 100%;
   font-family: "Inter", sans-serif;
+  justify-content: center;
+  background-image: url("image/20008474_6230276.svg");
+  background-size: cover;
 }
 
 h2 {
@@ -11,8 +14,9 @@ h2 {
 body {
   display: flex;
   flex-direction: column;
-  background-image: url("image/background.png");
   background-size: cover;
+  align-items: center;
+  width: 80%;
 }
 
 .mainpage {
@@ -26,9 +30,8 @@ body {
 .mainpage_div {
   display: flex;
   flex-direction: column;
-  width: 80%;
-  display: flex;
   flex: 1;
+  min-width: 100%;
 }
 
 /* header-start */
@@ -157,6 +160,7 @@ main {
   display: flex;
   flex-direction: row;
   height: 100%;
+  width: 100%;
 }
 
 .main_page_photo, .main_page_info {
@@ -218,5 +222,30 @@ main {
 }
 
 /* main-end */
+/* take_a_class-start */
+.take_a_class {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 50%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: inline;
+  padding: 10px;
+}
+
+.take_a_class_area {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 500px;
+  background-color: white;
+  border-radius: 25px;
+  margin-left: 80px;
+  margin-top: 80px;
+}
+
+/* take_a_class-end */
 
 /*# sourceMappingURL=style.css.map */
