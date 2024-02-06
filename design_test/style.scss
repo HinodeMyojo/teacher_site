@@ -243,12 +243,92 @@ main{
 
 .take_a_class_area{
   @include flex-column();
-  width: 400px;
-  height: 500px;
-  background-color: white;
-  border-radius: 25px;
+  width: 490px;
+  height: 650px;
+  background-color: #007AA0;
+  border-radius: 40px;
   margin-left: 80px;
-  margin-top: 80px;
+  margin-top: 120px;
+  overflow: hidden;
+  h2{
+    display: flex;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    color: white;
+    margin: 35px 0 35px 0;
+  }
+}
+
+.take_a_class_inside{
+  @include flex-column();
+  background-color: white;
+  height: 550px;
+}
+
+.take_a_class_inside_block{
+  @include flex-column();
+  display: inline;
+  padding: 50px;
+  gap: 30px;
+  label{
+    font-weight: bold;
+  }
+}
+.take_a_class_inside_block_form{
+  @include flex-column();
+  gap: 40px;
+}
+
+.take_a_class_inside_block_in,
+.take_a_class_inside_block_time{
+  @include flex-column();
+  gap: 10px;
+}
+
+.take_a_class_inside_block_input_box,
+.take_a_class_inside_block_input_submit{
+  display: inline-block;  /* Сохраняем элемент inline, но разрешаем управлять размерами */
+  width: 100%;
+  height: 50px;
+  font-size: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  border: #797979 2px solid;
+  background-color: #E7E8ED;
+  box-sizing: border-box;  /* Чтобы padding и border включались в ширину и высоту */
+}
+
+.take_a_class_inside_block_input_box::placeholder{
+  color: #4A4A4A;
+  opacity: 0.5;
+}
+
+.take_a_class_inside_block_submit{
+  @include flex-row();
+  position: relative;
+  img{
+    position: absolute; /* Абсолютное позиционирование иконки */
+    display: inline;
+    width: 60px;
+    height: 60px;
+    top: 50%; /* Центрируем иконку по вертикали */
+    left: 50%; /* Центрируем иконку по горизонтали */
+    transform: translate(260%, -50%); /* Сдвинуть иконку, чтобы она оказалась по центру */
+  }
+}
+
+.take_a_class_inside_block_input_submit{
+  height: 55px;
+  background-color: #86FF84;
+  border: none;
+  font-size: 20px;
+}
+
+.take_a_class_inside_block_input_submit:active{
+  background-color: #49e946;
 }
 
 /* take_a_class-end */
