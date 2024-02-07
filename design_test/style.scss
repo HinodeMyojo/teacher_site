@@ -8,6 +8,11 @@
   flex-direction: column;
 }
 
+@mixin buttom-active {
+  transition: 0.3s;
+  transform: scale(0.9);
+}
+
 html{
   display: flex;
   min-height: 100%;
@@ -30,7 +35,6 @@ body{
 
 .mainpage {
   @include flex-column();
-  background: linear-gradient(180deg, rgba(174,218,255,1) 0%, rgba(224,220,213,1) 100%);
   background-attachment: fixed;
   align-items: center;
 }
@@ -85,15 +89,14 @@ nav {
   justify-content: center;
   align-items: center;
   width: 290px;
-  height: 40px;
+  height: 45px;
   border-radius: 25px;
   border-style: none;
   background-color: #86FF84;
   }
 
 .nav_plan-button:active{
-  transition: 0.3s;
-  transform: scale(0.9);
+  @include buttom-active();
   background-color: #5fff5d
 }
 
@@ -150,14 +153,20 @@ nav {
   flex: 1;
   background-color: black;
   width: 100px;
-  height: 37px;
+  height: 45px;
   border-radius: 25px;
+
 }
 
 
 /* header-end */
 
 /* main-start */
+
+@mixin background-main-block{
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
 main{
   width: 100%;
   height: 100%;
@@ -168,18 +177,24 @@ main{
 .main_page{
   @include flex-row();
   height: 100%;
-  width: 100%
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .main_page_photo, .main_page_info{
   @include flex-column();
-  flex: 1;
-  width: 50%;
-  height: 100%;
   justify-content: center;
 }
 
 .main_page_info{
+  width: 40%;
+  box-sizing: border-box;
+  height: 500px;
+  border-radius: 50px;
+  padding-left: 20px;
+  padding-right: 5px;
+  @include background-main-block();
   gap: 10px;
   h2{
     font-size: 38px;
@@ -206,19 +221,23 @@ main{
     }
   }
   button:active{
-    transition: 0.3s;
-    transform: scale(0.9);
+    @include buttom-active();
     background-color: #32d62f;
   }
 }
 
 .main_page_photo{
-  align-items: center
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
 }
 
 .main_page_photo_photo{
   @include flex-column();
-
+  @include background-main-block();
+  border-top-left-radius: 100px;
+  border-bottom-right-radius: 70px;
   align-items: center;
   justify-content: center;
   img{
@@ -328,7 +347,31 @@ main{
 }
 
 .take_a_class_inside_block_input_submit:active{
+  @include buttom-active();
   background-color: #49e946;
 }
 
 /* take_a_class-end */
+
+/* about-start */
+
+.about-container{
+  @include flex-row();
+  @include background-main-block();
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 550px;
+  height: 300px;
+  border-radius: 50px;
+  img{
+    max-width: 100%;
+    max-height: 100%;
+  }
+  p{
+    font-size: 20px;
+  }
+}
+
+/* about-end */
