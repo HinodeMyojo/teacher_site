@@ -15,14 +15,18 @@
   transform: scale(0.9);
 }
 
-html{
+html {
   display: flex;
   min-height: 100%;
   font-family: 'Inter', sans-serif;
   justify-content: center;
-  background-image: url('image/20008474_6230276.svg');
+  background: rgb(208,233,255);
+  background: linear-gradient(87deg, rgba(208,233,255,1) 0%, rgba(246,238,225,1) 100%);
   background-size: cover;
+  background-position: center; /* Убедитесь, что изображение центрируется */
+
 }
+
 
 h2{
   font-weight: normal;
@@ -167,7 +171,7 @@ nav {
 /* main-start */
 
 @mixin background-main-block{
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0);
 }
 
 main{
@@ -191,7 +195,7 @@ main{
 }
 
 .main_page_info{
-  width: 40%;
+  width: 700px;
   box-sizing: border-box;
   height: 500px;
   border-radius: 50px;
