@@ -20,10 +20,11 @@ html {
   min-height: 100%;
   font-family: 'Inter', sans-serif;
   justify-content: center;
-  background: rgb(208,233,255);
   background: linear-gradient(87deg, rgba(208,233,255,1) 0%, rgba(246,238,225,1) 100%);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
-  background-position: center; /* Убедитесь, что изображение центрируется */
 
 }
 
@@ -37,6 +38,7 @@ body{
   background-size: cover;
   align-items: center;
   width: 80%;
+  margin: 0
 }
 
 .mainpage {
@@ -52,6 +54,9 @@ body{
 
 }
 /* header-start */
+
+
+
 
 header{
   height: 80px;
@@ -73,16 +78,24 @@ nav {
   @include flex-row();
   flex: 1;
   align-items: center;
-  justify-content: space-between;
   font-size: 24px;
+  width: 100%;
+  gap: 40px;
+  justify-content: space-between
 }
 
 .nav_main,
-.nav_plan{
+.nav_plan,
+.nav_info,
+.nav_logo{
   @include flex-row();
   gap: 45px;
   height: 60px;
   align-items: center;
+}
+.nav_main{
+  justify-content: space-between;
+  flex: 1;
 }
 
 .nav_plan{
@@ -115,8 +128,9 @@ nav {
   width: 100%;
   justify-content: center;
   align-items: center;
+  gap: 10px;
   img {
-    width: 130px;
+    width: 80px;
     height: auto;
   }
 }
@@ -163,6 +177,54 @@ nav {
   height: 45px;
   border-radius: 25px;
 
+}
+.checkbox_nav_burger{
+  display: none;
+}
+@media (min-width: 1190px){
+  .nav_burger{
+    display: none;
+  }
+
+}
+
+@media (max-width: 1190px) {
+  nav{
+    gap: 0;
+  }
+  .nav_main{
+    display: none;
+  }
+  .nav_main_ico img {
+    width: 70px;
+    height: auto;
+  }
+  .nav_burger{
+    @include flex-column();
+    margin-top: 8px;
+    min-width: 40px;
+    min-height: 40px;
+    gap: 8px;
+  }
+  .nav_burger_line {
+    height: 5px;
+    width: 100%;
+    border-radius: 10px;
+    background: #005F7E;
+  } 
+  .nav_burger.active .line1 {
+    transform: rotate(45deg) translate(32.5%, 5px);
+    transition-duration: 0.4s;
+  }
+
+  .nav_burger.active .line2 {
+    opacity: 0;
+  }
+
+  .nav_burger.active .line3 {
+    transform: rotate(-45deg) translate(32.5%, -5px);
+    transition-duration: 0.5s;
+  }
 }
 
 
