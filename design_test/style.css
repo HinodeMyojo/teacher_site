@@ -65,41 +65,17 @@ nav {
   justify-content: space-between;
 }
 
-.nav_main,
-.nav_plan,
-.nav_info,
-.nav_logo {
+.nav_lang {
   display: flex;
-  flex-direction: row;
-  gap: 45px;
-  height: 60px;
-  align-items: center;
-}
-
-.nav_main {
-  justify-content: space-between;
   flex: 1;
-}
-
-.nav_plan a, .nav_plan h2 {
-  color: black;
-}
-
-.nav_plan-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 290px;
+  background-color: black;
+  width: 100px;
   height: 45px;
   border-radius: 25px;
-  border-style: none;
-  background-color: #86FF84;
 }
 
-.nav_plan-button:active {
-  transition: 0.3s;
-  transform: scale(0.9);
-  background-color: #5fff5d;
+.checkbox_nav_burger {
+  display: none;
 }
 
 .nav_main_ico {
@@ -151,19 +127,6 @@ nav {
   border-radius: 60px;
 }
 
-.nav_lang {
-  display: flex;
-  flex: 1;
-  background-color: black;
-  width: 100px;
-  height: 45px;
-  border-radius: 25px;
-}
-
-.checkbox_nav_burger {
-  display: none;
-}
-
 @media (min-width: 1190px) {
   .nav_burger {
     display: none;
@@ -171,58 +134,100 @@ nav {
   .nav-hr {
     display: none;
   }
+  .nav_main,
+  .nav_plan,
+  .nav_info,
+  .nav_logo {
+    display: flex;
+    flex-direction: row;
+    gap: 45px;
+    height: 60px;
+    align-items: center;
+  }
+  .nav_main {
+    justify-content: space-between;
+    flex: 1;
+  }
+  .nav_plan a, .nav_plan h2 {
+    color: black;
+  }
+  .nav_plan-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 290px;
+    height: 45px;
+    border-radius: 25px;
+    border-style: none;
+    background-color: #66FF66;
+  }
+  .nav_plan-button:active {
+    transition: 0.3s;
+    transform: scale(0.9);
+    background-color: #99FFFF;
+  }
 }
 @media (max-width: 1190px) {
   nav {
     gap: 0;
   }
   .nav_main, .nav_info, .nav_plan {
-    display: flex; /* Замена @include flex-column() для примера без SCSS */
+    display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     flex: 1;
+  }
+  .nav_info, .nav_plan {
     width: 100%;
-    height: 100%;
+    height: 50%;
     align-items: center;
     color: #005F7E;
   }
-  .nav_main h2, .nav_main a, .nav_info h2, .nav_info a, .nav_plan h2, .nav_plan a {
+  .nav_info h2, .nav_info a, .nav_plan h2, .nav_plan a {
+    background-color: #ffffff;
     color: #005F7E; /* Это правило было вынесено, чтобы избежать неправильного вложения */
     font-size: 20px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
   }
   .nav_main {
-    transform: translateY(-100%);
+    transform: translateY(-200%);
     width: 80%;
     margin-left: 10%;
-    height: auto;
+    height: 350px;
     position: absolute;
     top: 0;
     left: 0;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
     z-index: 10;
-    background: rgb(255, 255, 255);
-    transition: transform 0.5s ease; /* Длительность анимации увеличена для медленного появления и исчезания */
+    background: rgb(189, 189, 189);
+    transition: transform 0.5s ease;
+    box-shadow: 0px 0px 20px rgb(95, 95, 95);
   }
   .nav_main.active {
-    transform: translateY(28%);
-    /* transition: transform 0.5s ease; Нет необходимости дублировать, уже определено в .nav_main */
-  }
-  .nav_info {
-    padding-top: 20px;
+    transform: translateY(23%);
   }
   .nav_plan-button {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
-    background-color: #86FF84;
-    border-radius: 0px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-top: -22px;
+    height: 50%;
+    background-color: #66FF66;
+    border: 0px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-color: transparent;
+  }
+  .nav_plan-button h2 {
+    background-color: transparent;
   }
   .nav_plan-button:active {
-    transition: 0s;
+    transition: 0.1s;
+    background-color: #99FFFF;
     transform: none;
   }
   .nav_main_ico img {
@@ -272,7 +277,7 @@ nav {
   height: 60px;
   border-radius: 25px;
   border-style: none;
-  background-color: #5cdb5a;
+  background-color: #66FF66;
 }
 .main_page_info button h2 {
   font-size: 21px;
@@ -280,7 +285,7 @@ nav {
   font-weight: normal;
 }
 .main_page_info button:active {
-  background-color: #3ce2a2;
+  background-color: #99FFFF;
 }
 
 @media (min-width: 1190px) {
@@ -352,6 +357,7 @@ nav {
 @media (max-width: 1190px) {
   main {
     display: flex;
+    flex-direction: column;
   }
   .main_page {
     display: flex;
@@ -377,6 +383,7 @@ nav {
     padding: 15px;
     padding: 15px;
     align-items: center;
+    justify-content: center;
   }
   .main_page_photo_photo {
     display: flex;
@@ -399,28 +406,23 @@ nav {
   display: flex;
   flex-direction: column;
   flex: 1;
-  width: 50%;
-  height: 100%;
   justify-content: center;
   align-items: center;
   display: inline;
-  padding: 10px;
 }
 
 .take_a_class_area {
   display: flex;
   flex-direction: column;
-  width: 490px;
-  height: 650px;
+  width: 100%;
   background-color: #007AA0;
-  border-radius: 40px;
-  margin-left: 80px;
-  margin-top: 120px;
-  overflow: hidden;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  justify-content: center;
 }
 .take_a_class_area h2 {
   display: flex;
-  font-size: 30px;
+  font-size: 23px;
   align-items: center;
   justify-content: center;
   font-weight: normal;
@@ -428,28 +430,61 @@ nav {
   margin: 35px 0 35px 0;
 }
 
+@media (min-width: 1190px) {
+  .take_a_class {
+    max-width: 500px;
+    padding: 10px;
+    height: 655px;
+  }
+  .take_a_class_area {
+    height: 100px;
+    overflow: hidden;
+  }
+  .take_a_class_inside {
+    padding: 50px;
+    gap: 30px;
+  }
+  .take_a_class_inside_block_form {
+    gap: 40px;
+  }
+  .take_a_class_inside_block_submit img {
+    transform: translate(240%, -50%);
+  }
+}
+@media (max-width: 1190px) {
+  .take_a_class {
+    width: 100%;
+  }
+  .take_a_class_area {
+    height: 60px;
+    overflow: hidden;
+  }
+  .take_a_class_inside {
+    height: 80%;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    padding: 15px;
+    gap: 10px;
+  }
+  .take_a_class_inside_block_form {
+    gap: 20px;
+  }
+  .take_a_class_inside_block_submit img {
+    transform: translate(140%, -50%);
+  }
+}
 .take_a_class_inside {
   display: flex;
   flex-direction: column;
   background-color: white;
-  height: 550px;
 }
-
-.take_a_class_inside_block {
-  display: flex;
-  flex-direction: column;
-  display: inline;
-  padding: 50px;
-  gap: 30px;
-}
-.take_a_class_inside_block label {
+.take_a_class_inside label {
   font-weight: bold;
 }
 
 .take_a_class_inside_block_form {
   display: flex;
   flex-direction: column;
-  gap: 40px;
 }
 
 .take_a_class_inside_block_in,
@@ -488,14 +523,13 @@ nav {
   display: inline;
   width: 60px;
   height: 60px;
-  top: 50%; /* Центрируем иконку по вертикали */
-  left: 50%; /* Центрируем иконку по горизонтали */
-  transform: translate(260%, -50%); /* Сдвинуть иконку, чтобы она оказалась по центру */
+  top: 50%;
+  left: 50%;
 }
 
 .take_a_class_inside_block_input_submit {
   height: 55px;
-  background-color: #86FF84;
+  background-color: #66FF66;
   border: none;
   font-size: 20px;
 }
@@ -503,7 +537,7 @@ nav {
 .take_a_class_inside_block_input_submit:active {
   transition: 0.3s;
   transform: scale(0.9);
-  background-color: #49e946;
+  background-color: #99FFFF;
 }
 
 /* take_a_class-end */
