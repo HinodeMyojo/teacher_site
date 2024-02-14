@@ -15,6 +15,9 @@
   transform: scale(0.9);
 }
 
+$button-color: #5cdb5a;
+$button-active-color: #3ce2a2;
+
 html {
   display: flex;
   min-height: 100%;
@@ -220,7 +223,7 @@ nav {
     top: 0;
     left: 0;
     z-index: 10;
-    background: rgba(182, 182, 182, 0.267);
+    background: rgb(255, 255, 255);
     transition: transform 0.5s ease; /* Длительность анимации увеличена для медленного появления и исчезания */
   }
   
@@ -291,53 +294,19 @@ nav {
   background-color: rgba(255, 255, 255, 0);
 }
 
-main{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center
-}
-.main_page{
-  @include flex-row();
-  height: 100%;
-  width: 100%;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.main_page_photo, .main_page_info{
-  @include flex-column();
-  justify-content: center;
-}
-
 .main_page_info{
-  width: 700px;
-  box-sizing: border-box;
-  height: 500px;
-  border-radius: 50px;
-  padding-left: 20px;
-  padding-right: 5px;
   @include background-main-block();
-  gap: 10px;
   h2{
-    font-size: 38px;
     margin: 0;
-    font-weight:1000;
-  }
-  p{
-    font-size: 22px;
-    color: #4A4A4A ;
   }
   button{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 300px;
     height: 60px;
     border-radius: 25px;
     border-style: none;
-    background-color: #5cdb5a;
+    background-color: $button-color;
     h2{
       font-size: 21px;
       margin: 0;
@@ -345,31 +314,122 @@ main{
     }
   }
   button:active{
-    @include buttom-active();
-    background-color: #32d62f;
+    background-color: $button-active-color;
   }
 }
 
-.main_page_photo{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 400px;
-}
-
-.main_page_photo_photo{
-  @include flex-column();
-  @include background-main-block();
-  border-top-left-radius: 100px;
-  border-bottom-right-radius: 70px;
-  align-items: center;
-  justify-content: center;
-  img{
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+@media (min-width: 1190px){
+  main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center
+  }
+  .main_page{
+    @include flex-row();
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .main_page_photo, .main_page_info{
+    @include flex-column();
+    justify-content: center;
+  }
+  
+  .main_page_info{
+    width: 700px;
+    box-sizing: border-box;
+    border-radius: 50px;
+    height: 500px;
+    padding-left: 20px;
+    padding-right: 5px;
+    gap: 10px;
+    h2{
+      font-size: 38px;
+      font-weight:1000;
+    }
+    p{
+      font-size: 22px;
+      color: #4A4A4A ;
+    }
+    button{
+      width: 300px;
+    }
+    button:active{
+      @include buttom-active();
+    }
+  }
+  
+  .main_page_photo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+  }
+  
+  .main_page_photo_photo{
+    @include flex-column();
+    @include background-main-block();
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 70px;
+    align-items: center;
+    justify-content: center;
+    img{
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
   }
 }
+
+@media (max-width: 1190px) {
+  @mixin back-white-inline-padding{
+    border-radius: 25px;
+    background-color: white;
+    display: inline-flex;
+    padding: 15px;
+  }
+  main{
+    display: flex
+  }
+  .main_page{
+    @include flex-column();
+    gap: 20px;
+  }
+  .main_page_info{
+    @include flex-column();
+    @include back-white-inline-padding();
+    button{
+      width: auto;
+      border-radius: 15px;
+    }
+  }
+  .main_page_photo{
+    @include back-white-inline-padding();
+    padding: 15px;
+    align-items: center;
+  }
+  .main_page_photo_photo{
+    @include flex-column();
+    align-items: center;
+    max-width: 300px;
+    img{
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    h2{
+      font-size: 20px;
+    }
+  }
+  
+}
+
+
+
 
 /* main-end */
 /* take_a_class-start */
