@@ -1,5 +1,8 @@
 @import 'node_modules/gerillass/scss/gerillass';
 
+$button-color: #66FF66;
+$button-active-color: #99FFFF;
+
 @mixin flex-row {
   display: flex;
   flex-direction: row;
@@ -11,12 +14,12 @@
 }
 
 @mixin buttom-active {
-  transition: 0.3s;
+  transition: 0.1s;
   transform: scale(0.9);
+  background-color: $button-active-color;
 }
 
-$button-color: #66FF66;
-$button-active-color: #99FFFF;
+
 
 html {
   display: flex;
@@ -409,10 +412,12 @@ nav {
   main{
     @include flex-column();
     margin-top: 15px;
+    align-items: center;
   }
   .main_page{
     @include flex-column();
     gap: 20px;
+    min-width: 100%;
   }
   .main_page_info{
     @include flex-column();
@@ -522,6 +527,16 @@ nav {
       transform: translate(140%, -50%);
     }
   }
+  .main_page_info_btn{
+    width: 100%;
+    height: auto;
+    background-color: $button-color;
+    border: 0px;
+    border-radius: 20px;
+  }
+  .main_page_info_btn:active{
+    @include buttom-active();
+  }
 }
 
 
@@ -601,20 +616,18 @@ nav {
 /* about-start */
 
 .about-container{
-  @include flex-row();
-  @include background-main-block();
+  @include flex-column();
+  width: 80%;
+  margin-top: 5%;
+  height: auto;
   align-items: center;
   justify-content: center;
-  box-sizing: border-box;
-  padding: 10px;
-  width: 550px;
-  height: 300px;
-  border-radius: 50px;
   img{
+    border-radius: 30px;
     max-width: 100%;
     max-height: 100%;
   }
-  p{
+  h2{
     font-size: 20px;
   }
 }
