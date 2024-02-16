@@ -216,13 +216,17 @@ nav {
     height: 50%;
     align-items: center;
     color: #005F7E;
-    h2, a {
+    h2, a{
       background-color: #ffffff;
       color: #005F7E; /* Это правило было вынесено, чтобы избежать неправильного вложения */
       font-size: 20px;
       width: 100%;
       align-items: center;
       justify-content: center;
+      height: 50%;
+    }
+    form{
+      width: 100%;
       height: 50%;
     }
   }
@@ -252,7 +256,7 @@ nav {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 50%;
+    height: 100%;
     background-color: $button-color;
     border: 0px;
     border-bottom-left-radius: 30px;
@@ -501,6 +505,7 @@ nav {
       transform: translate(240%, -50%);
     }
   }
+
 }
 
 
@@ -527,22 +532,23 @@ nav {
       transform: translate(140%, -50%);
     }
   }
-  .main_page_info_btn{
-    width: 100%;
-    height: auto;
-    background-color: $button-color;
-    border: 0px;
-    border-radius: 20px;
-  }
-  .main_page_info_btn:active{
-    @include buttom-active();
-  }
+
 }
 
 
 
 // Конец медия
 
+.main_page_info_btn{
+  width: 100%;
+  height: auto;
+  background-color: $button-color;
+  border: 0px;
+  border-radius: 20px;
+}
+.main_page_info_btn:active{
+  @include buttom-active();
+}
 
 .take_a_class_inside{
   @include flex-column();

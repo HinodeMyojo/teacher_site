@@ -193,6 +193,10 @@ nav {
     justify-content: center;
     height: 50%;
   }
+  .nav_info form, .nav_plan form {
+    width: 100%;
+    height: 50%;
+  }
   .nav_main {
     transform: translateY(-200%);
     width: 80%;
@@ -216,7 +220,7 @@ nav {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 50%;
+    height: 100%;
     background-color: #66FF66;
     border: 0px;
     border-bottom-left-radius: 30px;
@@ -478,19 +482,21 @@ nav {
   .take_a_class_inside_block_submit img {
     transform: translate(140%, -50%);
   }
-  .main_page_info_btn {
-    width: 100%;
-    height: auto;
-    background-color: #66FF66;
-    border: 0px;
-    border-radius: 20px;
-  }
-  .main_page_info_btn:active {
-    transition: 0.1s;
-    transform: scale(0.9);
-    background-color: #99FFFF;
-  }
 }
+.main_page_info_btn {
+  width: 100%;
+  height: auto;
+  background-color: #66FF66;
+  border: 0px;
+  border-radius: 20px;
+}
+
+.main_page_info_btn:active {
+  transition: 0.1s;
+  transform: scale(0.9);
+  background-color: #99FFFF;
+}
+
 .take_a_class_inside {
   display: flex;
   flex-direction: column;

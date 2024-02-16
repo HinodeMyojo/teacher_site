@@ -1,0 +1,34 @@
+{% load static %}
+<header>
+    <nav>
+        <div class="nav_logo">
+            <a href="{% url "mainpage:main_page" %}">
+                <div class="nav_main_ico">
+                    <img src="{% static "image/mountain.png" %}" alt="">
+                <div class="nav_main_ico_info">
+                    <h2>Агнесса Хутова</h2>
+                </div>
+            </div>
+            </a>
+        </div>
+        <div class="nav_main">
+            <div class="nav_info">
+                <a href="{% url "mainpage:main_page" %}">Главная</a>
+                <a href="{% url "mainpage:in_progress" %}">Обо мне</a>
+            </div>
+            <div class="nav_plan">
+                <a href="{% url "mainpage:in_progress" %}">Контакты</a>
+                <form action="{% url "mainpage:sign_up" %}">
+                    <button class="nav_plan-button">
+                        <h2>Записаться на занятие</h2>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="nav_burger">
+            <div class="nav_burger_line line1"></div>
+            <div class="nav_burger_line line2"></div>
+            <div class="nav_burger_line line3"></div>
+        </div>
+    </nav>
+</header>
