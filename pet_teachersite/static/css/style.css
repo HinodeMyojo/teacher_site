@@ -455,7 +455,7 @@ nav {
     gap: 30px;
   }
   .take_a_class_inside_block_form {
-    gap: 40px;
+    gap: 10px;
   }
   .take_a_class_inside_block_submit img {
     transform: translate(240%, -50%);
@@ -475,9 +475,6 @@ nav {
     border-bottom-right-radius: 30px;
     padding: 15px;
     gap: 10px;
-  }
-  .take_a_class_inside_block_form {
-    gap: 20px;
   }
   .take_a_class_inside_block_submit img {
     transform: translate(140%, -50%);
@@ -509,6 +506,11 @@ nav {
 .take_a_class_inside_block_form {
   display: flex;
   flex-direction: column;
+}
+.take_a_class_inside_block_form p {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .take_a_class_inside_block_in,

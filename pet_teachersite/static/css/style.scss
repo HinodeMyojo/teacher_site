@@ -498,7 +498,7 @@ nav {
     gap: 30px;
   }
   .take_a_class_inside_block_form{
-    gap: 40px;
+    gap: 10px;
   }
   .take_a_class_inside_block_submit{
     img{
@@ -523,9 +523,6 @@ nav {
     border-bottom-right-radius: 30px;
     padding: 15px;
     gap: 10px;
-  }
-  .take_a_class_inside_block_form{
-    gap: 20px;
   }
   .take_a_class_inside_block_submit{
     img{
@@ -562,6 +559,10 @@ nav {
 
 .take_a_class_inside_block_form{
   @include flex-column();
+  p{
+    @include flex-column();
+    gap: 5px
+  }
 }
 
 .take_a_class_inside_block_in,
