@@ -8,28 +8,48 @@
                 <div class="take_a_class_area">
                     <h2>Записаться на занятие</h2>
                 </div>
+                <div id="check-info" class="modal">
+                    <p class="modal-top">Проверьте введённые данные</h2>
+                    <p class="modal-data">Преподаватель: Хутова Агнесса Чухаибовна</h3>
+                    <p class="modal-data">Занятие по абазинскому языку</h3>
+                    <p class="modal-data">{{ first_name }}</h3>
+                    <p class="modal-data">Дата: 21.04.2023</h3>
+                    <p class="modal-data">Время: 15:30</h3>
+                    <p class="modal-comment">*Вы будете перенаправлены в WhatsApp Messenger для записи.</p>
+                    <div class="modal-buttons">
+                        <a href="#" class="modal-button modal-accept">Записаться</a>
+                        <a href="#" rel="modal:close" class="modal-button modal-decline">Отменить</a>
+                    </div>
+                </div>
                 <div class="take_a_class_inside">
-                    <form class="take_a_class_inside_block_form" method="POST">
+                    <form class="take_a_class_inside_block_form" id="SignForm">
                         {% csrf_token %}
-                        {{ form.as_p }}
+                        <div class="take_a_class_inside_block_in">
+                            <label for="box">Имя</label>
+                            <input 
+                                type="f_name" 
+                                id="box" 
+                                name="box" 
+                                class="take_a_class_inside_block_input_box"
+                                placeholder="Например: Иван">
+                        </div>
+                        <div class="take_a_class_inside_block_in">
+                            <label for="box">Фамилия</label>
+                            <input 
+                                type="l_name" 
+                                id="box" 
+                                name="box" 
+                                class="take_a_class_inside_block_input_box"
+                                placeholder="Например: Иванов">
+                        </div>
+                        <div class="take_a_class_inside_block_time">
+                            <label for="box-time">Дата</label>
+                            <input type="datetime_local" id="box-time" name="box-time" class="take_a_class_inside_block_input_box">
+                        </div>
                         <div class="take_a_class_inside_block_submit">
-                            <div id="check-info" class="modal">
-                                <p class="modal-top">Проверьте введённые данные</h2>
-                                <p class="modal-data">Преподаватель: Хутова Агнесса Чухаибовна</h3>
-                                <p class="modal-data">Занятие по абазинскому языку</h3>
-                                <p class="modal-data">{{ first_name }}</h3>
-                                <p class="modal-data">Дата: 21.04.2023</h3>
-                                <p class="modal-data">Время: 15:30</h3>
-                                <p class="modal-comment">*Вы будете перенаправлены в WhatsApp Messenger для записи.</p>
-                                <div class="modal-buttons">
-                                    <a href="#" class="modal-button modal-accept">Записаться</a>
-                                    <a href="#" rel="modal:close" class="modal-button modal-decline">Отменить</a>
-                                </div>
-                            </div>
-                            <a class="main_page_info_btn" rel="modal:open" href="#check-info">
+                            <button class="main_page_info_btn" type="submit">
                                 <h2>Записаться</h2>
-                            </a>
-                            <button style="display:none"></button>
+                            </button>
                         </div>
                     </form>
                 </div>
