@@ -9,13 +9,27 @@
                     <h2>Записаться на занятие</h2>
                 </div>
                 <div class="take_a_class_inside">
-                    <form class="take_a_class_inside_block_form" method="post">
+                    <form class="take_a_class_inside_block_form" method="POST">
                         {% csrf_token %}
                         {{ form.as_p }}
                         <div class="take_a_class_inside_block_submit">
-                            <button class="main_page_info_btn">
+                            <div id="check-info" class="modal">
+                                <p class="modal-top">Проверьте введённые данные</h2>
+                                <p class="modal-data">Преподаватель: Хутова Агнесса Чухаибовна</h3>
+                                <p class="modal-data">Занятие по абазинскому языку</h3>
+                                <p class="modal-data">{{ first_name }}</h3>
+                                <p class="modal-data">Дата: 21.04.2023</h3>
+                                <p class="modal-data">Время: 15:30</h3>
+                                <p class="modal-comment">*Вы будете перенаправлены в WhatsApp Messenger для записи.</p>
+                                <div class="modal-buttons">
+                                    <a href="#" class="modal-button modal-accept">Записаться</a>
+                                    <a href="#" rel="modal:close" class="modal-button modal-decline">Отменить</a>
+                                </div>
+                            </div>
+                            <a class="main_page_info_btn" rel="modal:open" href="#check-info">
                                 <h2>Записаться</h2>
-                            </button>
+                            </a>
+                            <button style="display:none"></button>
                         </div>
                     </form>
                 </div>

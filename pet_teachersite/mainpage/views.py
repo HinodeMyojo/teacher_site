@@ -1,18 +1,15 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.urls import path
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .forms import SignForm
 
 def sign_up(request):
     if request.method == 'POST':
-        first_name = request.POST.get('first_name')
-        last_name = request.POST.get('last_name')
-        date = request.POST.get('date')
-        return HttpResponse(
-            'https://wa.me/79614478065?text=Здравствуйте! ' + '\n'
-            f'Меня зовут {first_name} {last_name}. Я бы хотел(а) '  + '\n'
-            f'записаться на занятие на время {date}'
-        )
+        form = SignForm(request.POST)
+        if form.is_valid():
+            # Здесь мы просто передаем данные формы в контекст, отображаемый в модальном окне
+            context = {'form': form, 'data': form.cleaned_data, 'show_modal': True}
+            return render(request, 'mainpage/sign_up.html', context)
 
     else:
         form = SignForm()

@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
+    <link rel="stylesheet" href="style.css">
     <title>Главная страница</title>
 </head>
 <body class="mainpage">
@@ -30,9 +33,9 @@
                     </div>
                     <div class="nav_plan">
                         <a href="">Контакты</a>
-                        <button class="nav_plan-button">
+                        <a class="nav_plan-button">
                             <h2>Записаться на занятие</h2>
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <div class="nav_burger">
@@ -72,10 +75,23 @@
                                 <label for="box-time">Дата</label>
                                 <input type="datetime-local" id="box-time" name="box-time" class="take_a_class_inside_block_input_box">
                             </div>
+                            <div id="check-info" class="modal">
+                                <p class="modal-top">Проверьте введённые данные</h2>
+                                <p class="modal-data">Преподаватель: Хутова Агнесса Чухаибовна</h3>
+                                <p class="modal-data">Занятие по абазинскому языку</h3>
+                                <p class="modal-data">Семенов Егор</h3>
+                                <p class="modal-data">Дата: 21.04.2023</h3>
+                                <p class="modal-data">Время: 15:30</h3>
+                                <p class="modal-comment">*Вы будете перенаправлены в WhatsApp Messenger для записи.</p>
+                                <div class="modal-buttons">
+                                    <a href="#" class="modal-button modal-accept">Записаться</a>
+                                    <a href="#" rel="modal:close" class="modal-button modal-decline">Отменить</a>
+                                </div>
+                            </div>
                             <div class="take_a_class_inside_block_submit">
-                                <button class="main_page_info_btn">
+                                <a class="main_page_info_btn" rel="modal:open" href="#check-info">
                                     <h2>Записаться</h2>
-                                </button>
+                                </a>
                             </div>
                         </form>
                     </div>

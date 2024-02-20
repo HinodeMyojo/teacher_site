@@ -19,7 +19,12 @@ $button-active-color: #99FFFF;
   background-color: $button-active-color;
 }
 
-
+p{
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
 
 html {
   display: flex;
@@ -494,11 +499,8 @@ nav {
     overflow: hidden;
   }
   .take_a_class_inside{
-    padding: 50px;
+    padding: 40px;
     gap: 30px;
-  }
-  .take_a_class_inside_block_form{
-    gap: 10px;
   }
   .take_a_class_inside_block_submit{
     img{
@@ -519,9 +521,7 @@ nav {
   }
   .take_a_class_inside{
     height: 80%;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-    padding: 15px;
+    padding: 20px;
     gap: 10px;
   }
   .take_a_class_inside_block_submit{
@@ -537,11 +537,17 @@ nav {
 // Конец медия
 
 .main_page_info_btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: auto;
   background-color: $button-color;
   border: 0px;
   border-radius: 20px;
+  h2 a{
+    text-decoration: none;
+  }
 }
 .main_page_info_btn:active{
   @include buttom-active();
@@ -549,6 +555,8 @@ nav {
 
 .take_a_class_inside{
   @include flex-column();
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
   background-color: white;
   label{
     font-weight: bold;
@@ -559,6 +567,7 @@ nav {
 
 .take_a_class_inside_block_form{
   @include flex-column();
+  gap: 20px;
   p{
     @include flex-column();
     gap: 5px
@@ -580,8 +589,8 @@ nav {
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 20px;
-  border: #797979 2px solid;
-  background-color: #E7E8ED;
+  border: #c2c2c2 0px solid;
+  background-color: #dfdfdf;
   box-sizing: border-box;  /* Чтобы padding и border включались в ширину и высоту */
 }
 
@@ -592,7 +601,6 @@ nav {
 
 .take_a_class_inside_block_submit{
   @include flex-row();
-  position: relative;
   img{
     position: absolute; /* Абсолютное позиционирование иконки */
     display: inline;
@@ -601,6 +609,10 @@ nav {
     top: 50%;
     left: 50%;
     
+  }
+  a{
+    text-decoration: none;
+    color: black;
   }
 }
 
@@ -640,3 +652,59 @@ nav {
 }
 
 /* about-end */
+
+// Модальное окно начало
+
+.modal{
+  border-radius: 20px;
+  .modal-top{
+    display: flex;
+    font-size: 24px;
+    margin-bottom: 40px;
+    margin-top: 30px;
+    justify-content: baseline;
+    font-weight: bold;
+  }
+  .modal-data{
+    margin-top: 8px;
+    margin-bottom: 10px;
+    font-size: 18px
+  }
+  .modal-comment{
+    font-size: 15px;
+    font-weight: lighter;
+    margin-top: 40px;
+    margin-bottom: 5px;
+  }
+  .modal-buttons{
+    @include flex-row();
+    flex: 1;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .modal-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    width: 50%;
+    height: 50px;
+  }
+  .modal-accept{
+    background-color: #26AD50;
+    color: white;
+  }
+  .modal-decline{
+    background-color: #ffffff;
+    border: 1px rgb(71, 71, 71) solid;
+    color: black;
+  }
+  a{
+    text-decoration: none;
+  }
+}
+
+// Модальное окно конец
