@@ -1,7 +1,7 @@
 @import 'node_modules/gerillass/scss/gerillass';
 
-$button-color: #66FF66;
-$button-active-color: #99FFFF;
+$button-color: #00CC66;
+$button-active-color: #33CC66;
 
 @mixin flex-row {
   display: flex;
@@ -269,6 +269,7 @@ nav {
     border-color: transparent;
     h2{
       background-color: transparent;
+      color: black;
     }
   }
   .nav_plan-button:active{
@@ -655,56 +656,56 @@ nav {
 
 // Модальное окно начало
 
-.modal{
-  border-radius: 20px;
-  .modal-top{
-    display: flex;
-    font-size: 24px;
-    margin-bottom: 40px;
-    margin-top: 30px;
-    justify-content: baseline;
-    font-weight: bold;
-  }
-  .modal-data{
-    margin-top: 8px;
-    margin-bottom: 10px;
-    font-size: 18px
-  }
-  .modal-comment{
-    font-size: 15px;
-    font-weight: lighter;
-    margin-top: 40px;
-    margin-bottom: 5px;
-  }
-  .modal-buttons{
-    @include flex-row();
-    flex: 1;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  }
-  .modal-button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 12px;
-    width: 50%;
-    height: 50px;
-  }
-  .modal-accept{
-    background-color: #26AD50;
-    color: white;
-  }
-  .modal-decline{
-    background-color: #ffffff;
-    border: 1px rgb(71, 71, 71) solid;
-    color: black;
-  }
-  a{
-    text-decoration: none;
-  }
-}
+// .modal{
+//   border-radius: 20px;
+//   .modal-top{
+//     display: flex;
+//     font-size: 24px;
+//     margin-bottom: 40px;
+//     margin-top: 30px;
+//     justify-content: baseline;
+//     font-weight: bold;
+//   }
+//   .modal-data{
+//     margin-top: 8px;
+//     margin-bottom: 10px;
+//     font-size: 18px
+//   }
+//   .modal-comment{
+//     font-size: 15px;
+//     font-weight: lighter;
+//     margin-top: 40px;
+//     margin-bottom: 5px;
+//   }
+//   .modal-buttons{
+//     @include flex-row();
+//     flex: 1;
+//     margin-top: 10px;
+//     margin-bottom: 10px;
+//     align-items: center;
+//     justify-content: center;
+//     gap: 10px;
+//   }
+//   .modal-button{
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     border-radius: 12px;
+//     width: 50%;
+//     height: 50px;
+//   }
+//   .modal-accept{
+//     background-color: #26AD50;
+//     color: white;
+//   }
+//   .modal-decline{
+//     background-color: #ffffff;
+//     border: 1px rgb(71, 71, 71) solid;
+//     color: black;
+//   }
+//   a{
+//     text-decoration: none;
+//   }
+// }
 
 // Модальное окно конец
