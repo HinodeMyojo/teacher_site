@@ -1,7 +1,7 @@
 @import 'node_modules/gerillass/scss/gerillass';
 
-$button-color: #00CC66;
-$button-active-color: #33CC66;
+$button-color: #26AD50;
+$button-active-color: #5dbb7b;
 
 @mixin flex-row {
   display: flex;
@@ -269,7 +269,6 @@ nav {
     border-color: transparent;
     h2{
       background-color: transparent;
-      color: black;
     }
   }
   .nav_plan-button:active{
